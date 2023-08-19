@@ -23,7 +23,7 @@ then
 		sed -i 's/"//g' ${CSVFile}
 		sed -n "1,2p ; 3q" ${CSVFile} > EDM_RECORDS_${Current_TimeStamp}.csv
         sed -n "3,1000p ; 1001q" ${CSVFile} >> EDM_RECORDS_${Current_TimeStamp}.csv
-        sudo chmod 777 -R $SpoolDirPath;sudo cp EDM_RECORDS_${Current_TimeStamp}.csv ${SpoolDirPath}; sudo chown ccns:ccns -R $SpoolDirPath ; sudo chmod 777 -R $SpoolDirPath
+        sudo chmod 777 -R $SpoolDirPath;sudo chown ccns:ccns -R $SpoolDirPath ; sudo chmod 777 -R $SpoolDirPath ; sudo cp EDM_RECORDS_${Current_TimeStamp}.csv ${SpoolDirPath};
 		echo "Copied Rows from CSV file to Destination File" >> ${ParentPath}/logAgent.txt
 elif [ "${CurrentTime}" == "01:30" ];
 then
